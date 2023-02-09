@@ -6,61 +6,15 @@ type RatingPropsType = {
 
 export function Rating(props: RatingPropsType) {
     console.log("Rating rendering");
-    if(props.countStar === 1){
-        return (
-            <div>
-                <Start selected={true}/>
-                <Start selected={false}/>
-                <Start selected={false}/>
-                <Start selected={false}/>
-                <Start selected={false}/>
-            </div>
-        )
-    }
-    if(props.countStar === 2){
-        return (
-            <div>
-                <Start selected={true}/>
-                <Start selected={true}/>
-                <Start selected={false}/>
-                <Start selected={false}/>
-                <Start selected={false}/>
-            </div>
-        )
-    }
-    if(props.countStar === 3){
-        return (
-            <div>
-                <Start selected={true}/>
-                <Start selected={true}/>
-                <Start selected={true}/>
-                <Start selected={false}/>
-                <Start selected={false}/>
-            </div>
-        )
-    }
-    if(props.countStar === 4){
-        return (
-            <div>
-                <Start selected={true}/>
-                <Start selected={true}/>
-                <Start selected={true}/>
-                <Start selected={true}/>
-                <Start selected={false}/>
-            </div>
-        )
-    }
-    if(props.countStar === 5){
-        return (
-            <div>
-                <Start selected={true}/>
-                <Start selected={true}/>
-                <Start selected={true}/>
-                <Start selected={true}/>
-                <Start selected={true}/>
-            </div>
-        )
-    }
+    return (
+        <div>
+            <Start selected={props.countStar > 0}/>
+            <Start selected={props.countStar > 1}/>
+            <Start selected={props.countStar > 2}/>
+            <Start selected={props.countStar > 3}/>
+            <Start selected={props.countStar > 4}/>
+        </div>
+    )
     return (
         <div>
             <Start selected={false}/>

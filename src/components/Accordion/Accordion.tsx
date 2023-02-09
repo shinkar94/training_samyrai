@@ -1,16 +1,16 @@
 import React from "react";
 
-type AccordionPropsType= {
+type AccordionPropsType = {
     tittle: string
     collapsed: boolean
 }
 
-function Accordion(props: AccordionPropsType){
+function Accordion(props: AccordionPropsType) {
     console.log("Start rendering");
     return (
         <div>
             <AccordionTitle tittle={props.tittle}/>
-            {props.collapsed === true && <AccordionBody />}
+            {!props.collapsed && <AccordionBody/>}
         </div>
     )
 }
@@ -19,12 +19,12 @@ type AccordionTitlePropType = {
     tittle: string
 }
 
-function AccordionTitle(props: AccordionTitlePropType){
+function AccordionTitle(props: AccordionTitlePropType) {
     return <h3>{props.tittle}</h3>
 }
 
-function AccordionBody(){
-    return(
+function AccordionBody() {
+    return (
         <ul>
             <li>1</li>
             <li>2</li>

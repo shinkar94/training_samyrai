@@ -1,35 +1,32 @@
-import React from "react";
+import React, {useState} from "react";
 
-type RatingPropsType = {
-    countStar: 0|1 | 2 | 3 | 4 | 5;
-}
-
-export function Rating(props: RatingPropsType) {
-    console.log("Rating rendering");
+export function Rating() {
+    const [countStar, setCount] = useState<number>(0);
+    const addStar = (countStar: number) =>{
+        setCount(countStar)
+    }
     return (
         <div>
-            <Start selected={props.countStar > 0}/>
-            <Start selected={props.countStar > 1}/>
-            <Start selected={props.countStar > 2}/>
-            <Start selected={props.countStar > 3}/>
-            <Start selected={props.countStar > 4}/>
-        </div>
-    )
-    return (
-        <div>
-            <Start selected={false}/>
-            <Start selected={false}/>
-            <Start selected={false}/>
-            <Start selected={false}/>
-            <Start selected={false}/>
+            <Start selected={countStar > 0} countStar={1} callBack={addStar}/>
+            <Start selected={countStar > 1} countStar={2} callBack={addStar}/>
+            <Start selected={countStar > 2} countStar={3} callBack={addStar}/>
+            <Start selected={countStar > 3} countStar={4} callBack={addStar}/>
+            <Start selected={countStar > 4} countStar={5} callBack={addStar}/>
         </div>
     )
 }
 
 type StartPropsType = {
     selected: boolean
+    countStar: number
+    callBack: (count:number)=>void
 }
 
 function Start(props: StartPropsType) {
-    return props.selected === true ? <span><b>Start </b></span> : <span>Start </span>;
+    const addStarHandler =(countStar:number) =>{
+        props.callBack(countStar)
+    }
+    return props.selected === true
+        ? <span onClick={()=>addStarHandler(props.countStar)}><b>Start </b></span>
+        : <span onClick={()=>addStarHandler(props.countStar)}>Start </span>;
 }

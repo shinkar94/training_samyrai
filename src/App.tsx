@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 import {OnOf} from "./components/OnOf/OnOf";
+import {OnOfController} from "./components/OnOf/OnOfController";
 
 function App() {
+    const [contrOn, setOnOf] = useState<boolean>(false)
     return (
         <div>
             <PageTitle tittle={"My Post"}/>
@@ -15,6 +17,7 @@ function App() {
             <Rating />
             Button
             <OnOf/>
+            <OnOfController contrOn={contrOn} callBackControl={setOnOf}/>
         </div>
     );
 }

@@ -7,6 +7,7 @@ import {OnOfController} from "./components/OnOf/OnOfController";
 
 function App() {
     const [contrOn, setOnOf] = useState<boolean>(false)
+    const [countStar, setCountStar] = useState<number>(0);
     return (
         <div>
             <PageTitle tittle={"My Post"}/>
@@ -14,7 +15,7 @@ function App() {
             <Accordion tittle={"Accordion Title"} collapsed={true}/>
             <Accordion tittle={"Accordion Title2"} collapsed={true}/>
             Article2
-            <Rating />
+            <Rating countStar={countStar} setCountStar={setCountStar}/>
             Button
             <OnOf/>
             <OnOfController contrOn={contrOn} callBackControl={setOnOf}/>

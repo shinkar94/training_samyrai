@@ -20,24 +20,31 @@ export const OnOf = () =>{
         cursor: "pointer",
         width: "60px",
         height: "30px",
-        border: "2px solid black",
-        backgroundColor: on ? "green":"black"
+        backgroundColor: on ? "gray" : "white",
+        color: "black",
+        boxShadow: on ? "inset 0px 0px 5px black" : "0px 0px 2px black",
+        borderRadius: "2px 0px 0px 2px",
+        transition: "0.5s"
     }
     const btnTest2 = {
         cursor: "pointer",
         width: "60px",
         height: "30px",
-        border: "2px solid black",
-        backgroundColor: on ? "black":"green"
+        backgroundColor: on ? "white":"gray",
+        color: "black",
+        boxShadow: on ? "0px 0px 2px black" : "inset 0px 0px 5px black",
+        borderRadius: "2px 0px 0px 2px",
+        transition: "0.5s"
+
     }
     const indicatorStyle = {
         width: "30px",
         height: "30px",
         borderRadius: "50%",
-        border: "1px outset red",
         display: "inline-block",
         marginLeft: "10px",
-        backgroundColor: on ? "black" : "green"
+        backgroundColor: on ? "red" : "white",
+        boxShadow: on ? "0px 0px 15px red" : "inset 0px 0px 5px black",
     }
     return(
         <div>

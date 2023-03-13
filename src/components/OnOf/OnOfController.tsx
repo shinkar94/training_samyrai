@@ -17,24 +17,31 @@ export const OnOfController:React.FC<OnOfType> = ({callBackControl, contrOn}) =>
         cursor: "pointer",
         width: "60px",
         height: "30px",
-        border: "2px solid black",
-        backgroundColor: contrOn ? "green":"black"
+        backgroundColor: contrOn ? "gray" : "white",
+        color: "black",
+        boxShadow: contrOn ? "inset 0px 0px 5px black" : "0px 0px 2px black",
+        borderRadius: "2px 0px 0px 2px",
+        transition: "0.5s"
     }
     const btnTest2 = {
         cursor: "pointer",
         width: "60px",
         height: "30px",
-        border: "2px solid black",
-        backgroundColor: contrOn ? "black":"green"
+        backgroundColor: contrOn ? "white":"gray",
+        color: "black",
+        boxShadow: contrOn ? "0px 0px 2px black" : "inset 0px 0px 5px black",
+        borderRadius: "2px 0px 0px 2px",
+        transition: "0.5s"
+
     }
     const indicatorStyle = {
         width: "30px",
         height: "30px",
         borderRadius: "50%",
-        border: "1px outset red",
         display: "inline-block",
         marginLeft: "10px",
-        backgroundColor: contrOn ? "black" : "green"
+        backgroundColor: contrOn ? "red" : "white",
+        boxShadow: contrOn ? "0px 0px 15px red" : "inset 0px 0px 5px black",
     }
     const clickOF = () =>{
         callBackControl(false)
